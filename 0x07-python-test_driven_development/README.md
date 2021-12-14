@@ -1,5 +1,5 @@
 #### 0x07. Python - Test-driven development
-* General
+**General**
 
 - Why Python programming is awesome
 - What’s an interactive test
@@ -9,7 +9,7 @@
 - What are the basic option flags to create tests
 - How to find edge cases
 
-* Tasks
+**Tasks**
 0. Write a function that adds 2 integers.
 1. Write a function that divides all elements of a matrix.
 2. Write a function that prints My name is <first name> <last name>
