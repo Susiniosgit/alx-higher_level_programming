@@ -1,45 +1,136 @@
 The ``add_integer`` module
-======================
+==========================
 
-Using ``add``
--------------------
+Using ``add_integer``
+---------------------
 
-Write a function that adds 2 integers.
+First import ``add_integer`` from the ``add_integer`` module:
 
-    Prototype: def add_integer(a, b=98):
-    a and b must be integers or floats, otherwise raise a TypeError exception with the message a must be an integer or b must be an integer
-    a and b must be first casted to integers if they are float
-    Returns an integer: the addition of a and b
-    You are not allowed to import any module
+	>>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(3, 5)
-8
->>> add_integer(3.5, 5)
-8
->>> add_integer(3, 5.5)
-8
->>> add_integer(3.5, 5.5)
-8
->>> add_integer("3", 5)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 3, in add_integer
-TypeError: a must be an integer
->>> add_integer(3, "5")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 5, in add_integer
-TypeError: b must be an integer
->>> add_integer("3", "5")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 3, in add_integer
-TypeError: a must be an integer
->>> a = float("inf")
->>> b = 10
->>> add_integer(a, b)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 8, in add_integer
-OverflowError: cannot convert float infinity to integer
+Now use it:
+
+	>>> add_integer(1, 2)
+	3
+
+	>>> add_integer(2)
+	100
+
+	>>> add_integer(1, -2)
+	-1
+
+	>>> add_integer(-2)
+	96
+
+	>>> add_integer(-1, -2)
+	-3
+
+	>>> add_integer(1, 2.5)
+	3
+
+	>>> add_integer(2.5)
+	100
+
+	>>> add_integer(1, -2.5)
+	-1
+
+	>>> add_integer(-2.5)
+	96
+
+	>>> add_integer(-1, -2.5)
+	-3
+
+	>>> add_integer(1.5, 2.5)
+	3
+
+	>>> add_integer(2.5)
+	100
+
+	>>> add_integer(1.5, -2.5)
+	-1
+
+	>>> add_integer(-2.5)
+	96
+
+	>>> add_integer(-1.5, -2.5)
+	-3
+
+	>>> add_integer(float('inf'), 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(float('inf'), float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(-float('inf'), 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(-float('inf'), -float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, -float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(-float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	
+	>>> add_integer("Holberton", 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer("Holberton", "School")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, "School")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer("Holberton")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, None)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
