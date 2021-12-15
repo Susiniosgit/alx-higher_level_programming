@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 """
-    Module to find the max integer in a list
-    Write a function that multiplies 2 matrices by using
-    the module NumPy
-    To install it: pip3 install numpy==1.15.0
-    Prototype: def lazy_matrix_mul(m_a, m_b):
-    Test cases should be the same as 100-matrix_mul
-    but with new exception type/message
+This is the lazy_matrix_mul module.
+This module supplies one function, lazy_matrix_mul().
 """
-
-
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """ multiply two matrix with numpy """
+    """
+    Return a new matrix where each element has been divided by div.
+    Args:
+        m_a (list): list of lists of integers or floats.
+        m_b (list): list of lists of integers or floats.
+    """
+
     return np.dot(m_a, m_b)
