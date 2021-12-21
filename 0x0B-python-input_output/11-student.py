@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 13-student.py
+# 10-student.py
 """Defines a class Student."""
 
 
