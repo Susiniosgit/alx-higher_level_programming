@@ -104,7 +104,7 @@ class Rectangle(Base):
                     self.x = a
                 elif i == 4:
                     self.y = a
-                else:
+        else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
             if "width" in kwargs:
