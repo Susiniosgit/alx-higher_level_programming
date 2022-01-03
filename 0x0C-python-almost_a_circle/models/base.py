@@ -125,9 +125,9 @@ class Base:
                 if (row_height < rect.height + rect.y):
                     row_height = rect.height + rect.y
                 else:
-                screen_height += row_height + padding
-                row_width = rect.width + rect.x + padding * 2
-                row_height = rect.height + rect.y
+                    screen_height += row_height + padding
+                    row_width = rect.width + rect.x + padding * 2
+                    row_height = rect.height + rect.y
 
         for square in list_squares:
             potential_width = row_width + square.size + square.x + padding
@@ -136,9 +136,9 @@ class Base:
                 if (row_height < square.size + square.y):
                     row_height = square.size + square.y
                 else:
-                screen_height += row_height + padding
-                row_width = square.size + square.x + padding * 2
-                row_height = square.size + square.y
+                    screen_height += row_height + padding
+                    row_width = square.size + square.x + padding * 2
+                    row_height = square.size + square.y
         turtle.screensize(canvwidth=screen_width, canvheight=screen_height)
         turtle.pu()
         turtle.left(180)
@@ -155,14 +155,14 @@ class Base:
                 if (row_height < rect.height + rect.y):
                     row_height = rect.height + rect.y
                 else:
-                turtle.pu()
-                turtle.left(180)
-                turtle.forward(row_width - padding)
-                turtle.left(90)
-                turtle.forward(row_height + padding)
-                turtle.left(90)
-                row_width = rect.width + rect.x + padding * 2
-                row_height = rect.height + rect.y
+                    turtle.pu()
+                    turtle.left(180)
+                    turtle.forward(row_width - padding)
+                    turtle.left(90)
+                    turtle.forward(row_height + padding)
+                    turtle.left(90)
+                    row_width = rect.width + rect.x + padding * 2
+                    row_height = rect.height + rect.y
             turtle.pd()
             turtle.pencolor(color_list[color_index % color_size])
             for _ in range(4):
@@ -198,14 +198,14 @@ class Base:
                 if (row_height < square.size):
                     row_height = square.size + square.y
                 else:
-                turtle.pu()
-                turtle.left(180)
-                turtle.forward(row_width - padding)
-                turtle.left(90)
-                turtle.forward(row_height + padding)
-                turtle.left(90)
-                row_width = square.size + square.x + padding * 2
-                row_height = square.size + square.y
+                    turtle.pu()
+                    turtle.left(180)
+                    turtle.forward(row_width - padding)
+                    turtle.left(90)
+                    turtle.forward(row_height + padding)
+                    turtle.left(90)
+                    row_width = square.size + square.x + padding * 2
+                    row_height = square.size + square.y
             turtle.pd()
             turtle.pencolor(color_list[color_index % color_size])
             for _ in range(4):
