@@ -1,24 +1,34 @@
 #!/usr/bin/python3
 """
-changes the name of a State object from the database hbtn_0e_6_usa
+Script that deletes all `State` objects with a name containing
+the letter `a` from the database `hbtn_0e_6_usa`.
+Arguments:
+    mysql username (str)
+    mysql password (str)
+    database name (str)
 """
-from sys import argv
+
+import sys
 from sqlalchemy import (create_engine)
-from model_state import Base, State
 from sqlalchemy.orm import Session
+from sqlalchemy.engine.url import URL
+from model_state import Base, State
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
-                           (argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    mySQL_u = sys.argv[1]
+    mySQL_p = sys.argv[2]
+    db_name = sys.argv[3]
+
+    url = {'drivername': 'mysql+mysqldb', 'host': 'localhost',
+           'username': mySQL_u, 'password': mySQL_p, 'database': db_name}
+
+    engine = create_engine(URL(**url), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    session = Session(engine)
+    session = Session(bind=engine)
 
-    for state in session.query(State).order_by(State.id).all():
-        for c in state.name:
-            if c == 'a':
-                session.delete(state)
-                break
+    q = session.query(State).filter(State.name.like('%a%'))
+    q.delete(synchronize_session=False)
+
     session.commit()
-    session.close()
